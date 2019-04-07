@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Stats : MonoBehaviour {
 
 	public static int CurrentScore = 0;
+    public static int Difficulty = 3;
 
     private int min = 0;
     private int sec = 0;
