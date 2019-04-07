@@ -3,12 +3,10 @@ using UnityEngine;
 public class CarSpawner : MonoBehaviour {
 
 	public float spawnDelay = 0f;
+    float nextTimeToSpawn = 0f;
 
-	public GameObject car;
-
+    public GameObject car;
 	public Transform[] spawnPoints;
-
-	float nextTimeToSpawn = 0f;
 
     void Start()
     {

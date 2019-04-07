@@ -10,4 +10,6 @@ Change Log
 3. Game timer
 4. Home menu
 5. Difficulty text responds to selection
-6. Choose difficulty
+6. Difficulty selection affects gameplay
+     - car speed, car spawn rate, score per goal
+7. Exit menu when hit by car

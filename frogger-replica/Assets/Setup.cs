@@ -21,15 +21,15 @@ public class Setup : MonoBehaviour
     {
         if(Stats.Difficulty == 1)
         {
-            DiffText.text = "Couldn't lose if you wanted to.";
+            DiffText.text = "Low risk, low reward.";
         }
         else if (Stats.Difficulty == 2)
         {
-            DiffText.text = "Still a pretty casual game.";
+            DiffText.text = "A slightly less casual experience.";
         }
         else if (Stats.Difficulty == 3)
         {
-            DiffText.text = "The skill gap is real; good luck.";
+            DiffText.text = "Mad props for mad hops.";
         }
     }
 

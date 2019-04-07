@@ -35,7 +35,7 @@ public class Frog : MonoBehaviour {
 		if (col.tag == "Car")
 		{
 			Stats.CurrentScore = 0;
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			SceneManager.LoadScene("EndMenu");
 		}
 	}
 }
