@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour {
 
-	public float spawnDelay = 0.9f;
+	public float spawnDelay = 0f;
 
 	public GameObject car;
 
@@ -12,7 +12,7 @@ public class CarSpawner : MonoBehaviour {
 
     void Start()
     {
-        spawnDelay /= Stats.Difficulty;    
+        spawnDelay = 0.6f / Stats.Difficulty;    
     }
 
     void Update ()

@@ -20,6 +20,7 @@ public class Stats : MonoBehaviour {
 
     private void Update()
     {
+        // update game clock
         min = (int)Time.time / 60;
         sec = (int)Time.time % 60;
         ms = (int)(Time.time * 100) % 100;

@@ -3,15 +3,17 @@ using UnityEngine;
 public class Car : MonoBehaviour {
 
 	public Rigidbody2D rb;
-
-	public float minSpeed = 2f;
-	public float maxSpeed = 3f;
-
+    
 	float speed = 1f;
 
 	void Start ()
 	{
-		speed = Random.Range(minSpeed * Stats.Difficulty, maxSpeed * Stats.Difficulty);
+        if (Stats.Difficulty == 1)
+            speed = Random.Range(2f, 3f);
+        else if (Stats.Difficulty == 2)
+            speed = Random.Range(6f, 9f);
+        else if (Stats.Difficulty == 3)
+            speed = Random.Range(10f, 15f);
 	}
 
 	void FixedUpdate () {
