@@ -35,10 +35,14 @@ public class Setup : MonoBehaviour
 
     public void StartGame()
     {
-        if(Stats.Difficulty == 0)
+        if (Stats.Difficulty == 0)
         {
             DiffText.text = "Select a difficulty to start the game.";
         }
-        else SceneManager.LoadScene("Main");
+        else
+        {
+            Stats.timeOffset = Time.time;
+            SceneManager.LoadScene("Main");
+        }
     }
 }

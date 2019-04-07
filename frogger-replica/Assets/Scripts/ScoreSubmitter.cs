@@ -42,7 +42,7 @@ public class ScoreSubmitter : MonoBehaviour
     }
 
     public void SortEntries()
-    {
+    { 
         int score1 = int.Parse(entries[0].Split(',')[0]);
         int score2 = int.Parse(entries[1].Split(',')[0]);
         int score3 = int.Parse(entries[2].Split(',')[0]);
