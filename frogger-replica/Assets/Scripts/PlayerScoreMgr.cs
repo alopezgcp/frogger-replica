@@ -78,7 +78,7 @@ public class PlayerScoreMgr : MonoBehaviour
             --lastScoreIndex;
         }
 
-        scoreText.text = "Last Three Scores for " + Stats.playerName + "\n" + scoreString;
+        scoreText.text = "Previous Scores for " + Stats.playerName + "\n" + scoreString;
     }
 
     public void StartGame()

@@ -12,3 +12,8 @@
 300,starchump
 700,starchump
 0,
+600,newname
+1200,newname
+700,newname
+500,newname
+300,newname
