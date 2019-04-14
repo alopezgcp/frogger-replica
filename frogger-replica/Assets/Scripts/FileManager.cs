@@ -1,35 +1,32 @@
 ﻿using System.IO;
+using System.Collections.Generic;
 
 public class FileManager
 {
     string path = "./Assets/high-scores.txt";
     
-    public string[] GetHighScoreEntries()
+    public List<string> GetScores()
     {
-        string[] entries = new string[3];
-        string line = null;
+        List<string> scores = new List<string>();
+        FileManager fm = new FileManager();
+        string line = "";
 
-        using(StreamReader sr = new StreamReader(path))
+        using (StreamReader sr = new StreamReader(path))
         {
-            int lineCount = 0;
             while ((line = sr.ReadLine()) != null)
             {
-                entries[lineCount] = line;
-                ++lineCount;
+                scores.Add(line);
             }
         }
 
-        return entries;
+        return scores;
     }
 
-    public void WriteHighScores(string[] entries)
+    public void WriteScoreToFile(string newScore)
     {
-        using(StreamWriter sw = new StreamWriter(path))
+        using(StreamWriter sw = new StreamWriter(path, true))
         {
-            foreach(string entry in entries)
-            {
-                sw.WriteLine(entry);
-            }
+            sw.WriteLine(newScore);
         }
     }
 }

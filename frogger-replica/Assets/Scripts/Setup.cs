@@ -4,45 +4,33 @@ using UnityEngine.SceneManagement;
 
 public class Setup : MonoBehaviour
 {
-    public Text DiffText;
-    
-    void Start()
+    public Slider speedSlider;
+    public Slider spawnSlider;
+    public Slider carSizeSlider;
+    public Slider frogSizeSlider;
+
+    public GameObject frog;
+    public GameObject car;
+
+    private void Update()
     {
-        Stats.Difficulty = 0;
+        frog.transform.localScale = new Vector3(frogSizeSlider.value, frogSizeSlider.value, 1f);
+        car.transform.localScale = new Vector3(carSizeSlider.value, carSizeSlider.value, 1f);
     }
 
-    public void SetDifficulty(int d)
+    public void NextScene()
     {
-        Stats.Difficulty = d;
-        SetDiffText();
+        Stats.carSpeed = speedSlider.value;
+        Stats.carSpawnRate = spawnSlider.value;
+        Stats.carScale = carSizeSlider.value;
+        Stats.frogScale = frogSizeSlider.value;
+
+        SceneManager.LoadScene("PlayerScoreMenu");
     }
 
-    public void SetDiffText()
+    public void QuitGame()
     {
-        if(Stats.Difficulty == 1)
-        {
-            DiffText.text = "Low risk, low reward.";
-        }
-        else if (Stats.Difficulty == 2)
-        {
-            DiffText.text = "A slightly less casual experience.";
-        }
-        else if (Stats.Difficulty == 3)
-        {
-            DiffText.text = "Mad props for mad hops.";
-        }
-    }
-
-    public void StartGame()
-    {
-        if (Stats.Difficulty == 0)
-        {
-            DiffText.text = "Select a difficulty to start the game.";
-        }
-        else
-        {
-            Stats.timeOffset = Time.time;
-            SceneManager.LoadScene("Main");
-        }
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }

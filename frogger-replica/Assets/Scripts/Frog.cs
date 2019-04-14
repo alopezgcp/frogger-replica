@@ -5,9 +5,13 @@ public class Frog : MonoBehaviour {
 
 	public Rigidbody2D rb;
 
+    private void Start()
+    {
+        transform.localScale = new Vector3(Stats.frogScale, Stats.frogScale, 1f);
+    }
+
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             rb.MovePosition(rb.position + Vector2.right);
@@ -34,7 +38,10 @@ public class Frog : MonoBehaviour {
 	{
 		if (col.tag == "Car")
 		{
-			SceneManager.LoadScene("ScoreMenu");
+            --Stats.LivesLeft;
+            if(Stats.LivesLeft > 0)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            else SceneManager.LoadScene("HighScoreMenu");
 		}
 	}
 }

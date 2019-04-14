@@ -1,3 +1,14 @@
-1800, starchump
-1600, starchump
-1500, The Best
+1800,starchump
+1600,starchump
+1500,The Best
+300,faralz
+200,ff
+100,ff
+1400,ff
+300,ff
+1200,faralz
+800,faralz
+1100,faralz
+300,starchump
+700,starchump
+0,

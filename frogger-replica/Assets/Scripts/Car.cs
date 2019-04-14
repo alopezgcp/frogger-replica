@@ -3,17 +3,12 @@ using UnityEngine;
 public class Car : MonoBehaviour {
 
 	public Rigidbody2D rb;
-    
 	float speed = 1f;
 
 	void Start ()
 	{
-        if (Stats.Difficulty == 1)
-            speed = Random.Range(2f, 3f);
-        else if (Stats.Difficulty == 2)
-            speed = Random.Range(6f, 9f);
-        else if (Stats.Difficulty == 3)
-            speed = Random.Range(10f, 15f);
+        speed = Stats.carSpeed;
+        transform.localScale = new Vector3(Stats.carScale, Stats.carScale, 1f);
 	}
 
 	void FixedUpdate () {

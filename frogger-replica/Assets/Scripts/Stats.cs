@@ -3,9 +3,16 @@ using UnityEngine.UI;
 
 public class Stats : MonoBehaviour {
 
+    public static string playerName = "";
 	public static int CurrentScore = 0;
-    public static int Difficulty = 3;
+    public static int LivesLeft = 3;
     public static float timeOffset = 0f;
+    public static string finalGameTime = "";
+
+    public static float carSpeed = 1f;
+    public static float carSpawnRate = 1f;
+    public static float carScale = 1f;
+    public static float frogScale = 1f;
 
     private int min = 0;
     private int sec = 0;
@@ -13,10 +20,12 @@ public class Stats : MonoBehaviour {
 
     public Text scoreText;
     public Text timerText;
+    public Text livesText;
 
 	void Start ()
     { 
 		scoreText.text = CurrentScore.ToString();
+        livesText.text = "Lives: " + LivesLeft.ToString();
 	}
 
     private void Update()
@@ -26,5 +35,6 @@ public class Stats : MonoBehaviour {
         sec = (int)(Time.time -timeOffset) % 60;
         ms = (int)((Time.time - timeOffset) * 100) % 100;
         timerText.text = min.ToString("00") + ":" + sec.ToString("00") + ":" + ms.ToString("00");
+        finalGameTime = timerText.text;
     }
 }

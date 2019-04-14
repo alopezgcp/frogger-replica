@@ -10,7 +10,7 @@ public class CarSpawner : MonoBehaviour {
 
     void Start()
     {
-        spawnDelay = 0.6f / Stats.Difficulty;    
+        spawnDelay = 1 / Stats.carSpawnRate;
     }
 
     void Update ()
